@@ -1,0 +1,147 @@
+.women-product-route {
+  display: flex;
+  align-items: center;
+  font-family: 'Tinos', serif;
+  font-size: 12px;
+  margin-left: -7px;
+  margin-top: -14px;
+  padding-bottom: 10px;
+  span {
+    margin: 0 6px;
+  }
+  .wpr-home, .wpr-all {
+    text-decoration: none;
+    color: #C61B21;
+  }
+  .route-prod-name {
+    text-transform: lowercase;
+    color: #231F20;
+  }
+}
+
+.women-prod-hero {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 46px;
+  width: 100%;
+  .women-prod-slider {
+    width: 50%;
+    .women-slider-img {
+      width: 100%;
+    }
+    .women-slides {
+      position: relative;
+      .slick-prev, .slick-next {
+        position: absolute;
+        top: 50%;
+      }
+      .slick-prev {
+        left: 5%;
+        z-index: 1;
+      }
+      .slick-next {
+        right: 5%;
+        z-index: 1;
+      }
+    }
+  }
+  .women-prod-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-left: 19px;
+    padding-right: 19px;
+    padding-top: 9px;
+    padding-bottom: 10px;
+    p {
+      margin-top: 10px;
+      font-family: 'Ropa Sans', sans-serif;
+      font-size: 13px;
+      line-height: 20px;
+    }
+    .women-prod-info-title {
+      font-family: 'Tinos', serif;
+      font-size: 24px;
+      font-weight: 700;
+    }
+    .women-prod-info-fit {
+      margin-top: 11px;
+      font-family: 'Tinos', serif;
+      font-size: 19px;
+    }
+    .women-prod-info-subtitle {
+      font-family: 'Ropa Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .women-prod-info-price {
+      margin-top: 8px;
+      font-family: 'Tinos', serif;
+      font-size: 16px;
+    }
+    .women-prod-made-in {
+      margin-top: 5px;
+    }
+    .women-add-cart-btn {
+      background-color: #C61B21;
+      color: white;
+      font-family: 'Tinos', serif;
+      font-size: 13px;
+      font-weight: 700;
+      margin-top: 23px;
+      margin-bottom: -10px;
+      border: none;
+      height: 39px;
+      width: 129px;
+    }
+  }
+}
+
+.women-prod-info-container {
+  width: 36.071%;
+}
+
+#women-prod-size {
+  border-top: 1px solid #231F20;
+  border-bottom: 1px solid #231F20;
+  margin-top: 16px;
+  padding-top: 7px;
+  width: 100%;
+  height: 70px;
+  select {
+    width: 100%;
+    height: 22px;
+    font-family: sans-serif;
+    font-size: 16px;
+  }
+  .women-size-chart {
+    font-family: 'Ropa Sans', sans-serif;
+    font-size: 12px;
+    color: #C61B21;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .women-prod-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    .women-prod-slider {
+      width: 100%;
+    }
+    .women-prod-info {
+      margin-top: 15px;
+    }
+}
+}
+
+@media only screen and (max-width: 719px) {
+  .women-prod-info-container {
+    width: 100%;
+    
+  }
+}

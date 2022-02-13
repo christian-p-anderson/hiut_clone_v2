@@ -1,0 +1,60 @@
+// -- FONTS -- //
+@import url('https://fonts.googleapis.com/css?family=Ropa+Sans:400,400i|Tinos:400,400i,700,700i');
+
+// -- SNIPPETS -- //
+@import "./components/Header/Header";
+@import "./components/Mens/MensProduct";
+@import "./components/Womens/WomensProduct";
+@import "./components/Cart/Cart";
+@import "./components/Pages/Home/Home";
+@import "./components/Footer/Footer";
+@import "./components/Forms/CheckoutForm";
+@import "./components/Mens/MensCollection";
+@import "./components/Womens/WomensCollection";
+@import "./components/SizeChart/SizeChart";
+@import "./components/MeasureJeans/MeasureJeans";
+@import "./components/AboutJeans/AboutJeans";
+@import "./components/Forms/LoginRegForm";
+@import "./components/Details/Details";
+@import "./components/Pages/AllCollection/AllCollection";
+@import "./components/Forms/AddressBookForm";
+
+// -- RESET -- //
+* {
+	margin: 0;
+	padding: 0;
+  box-sizing: border-box;
+}
+
+// -- BASE SETUP -- //
+body {
+	font-size: 1em;
+	line-height: 1.5em;
+	margin: 10px auto;
+	color: #231f20;
+	text-rendering: optimizeLegibility;
+	max-width: 1420px;
+	padding: 0 10px;
+}
+
+$base-color: #231F20;
+
+@mixin transform($property) {
+	margin: $property;
+	font-family: 'Tinos', serif;
+}
+
+// -- PAGE UNDER CONSTRUCTION STYLING -- //
+.page-under-construction-hero {
+	border-bottom: 1px solid $base-color;
+	margin-bottom: 20px;	
+}
+
+.page-under-construction {
+	@include transform(50px 10px 90px 10px);
+}
+
+
+
+
+
