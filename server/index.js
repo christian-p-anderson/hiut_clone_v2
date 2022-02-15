@@ -9,9 +9,12 @@ const prodCtrl = require("./controllers/productsCtrl")
 const cartCtrl = require("./controllers/cartCtrl")
 const stripeCtrl = require("./controllers/stripeCtrl")
 const nmCtrl = require("./controllers/nodeMailerCtrl")
+const cors = require("cors")
 
 // -- MIDDLEWARE -- //
 app.use(express.json())
+
+app.use(cors())
 
 app.use(session({
   secret: SESSION_SECRET,
