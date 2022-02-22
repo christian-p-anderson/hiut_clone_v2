@@ -1,5 +1,6 @@
-require("dotenv").config()
-const { EMAIL_PASSWORD, EMAIL } = process.env
+const path = require("path")
+require('dotenv').config({ path: path.resolve(__dirname, '../../.env') })
+const { REACT_APP_EMAIL_PASSWORD, REACT_APP_EMAIL } = process.env
 const nodemailer = require("nodemailer")
 
 module.exports = {
@@ -10,8 +11,8 @@ module.exports = {
       service: 'Gmail',
       host: 'smtp.gmail.com',
       auth: {
-        user: EMAIL,
-        pass: EMAIL_PASSWORD
+        user: REACT_APP_EMAIL,
+        pass: REACT_APP_EMAIL_PASSWORD
       }
     })
 

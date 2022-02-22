@@ -1,9 +1,10 @@
-require("dotenv").config()
+const path = require("path")
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
 const express = require("express")
 const app = express()
 const massive = require("massive")
 const session = require("express-session")
-const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING } = process.env
+const { REACT_APP_SERVER_PORT, REACT_APP_SESSION_SECRET, REACT_APP_CONNECTION_STRING } = process.env
 const loginRegCtrl = require("./controllers/loginRegCtrl")
 const prodCtrl = require("./controllers/productsCtrl")
 const cartCtrl = require("./controllers/cartCtrl")
@@ -12,18 +13,21 @@ const nmCtrl = require("./controllers/nodeMailerCtrl")
 const cors = require("cors")
 
 // -- MIDDLEWARE -- //
+
 app.use(express.json())
 
 app.use(cors())
 
 app.use(session({
-  secret: SESSION_SECRET,
+  secret: REACT_APP_SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
   cookie: {
-    maxAge: 1000 * 60 * 60 * 1
+    maxAge: 1000 * 60 * 60 * 1,
+    httpOnly: true
   }
 }))
+
 
 app.use((req, res, next) => {
   if (!req.session.cart) {
@@ -37,14 +41,21 @@ app.use((req, res, next) => {
 app.use(express.static(`${__dirname}/../build`));
 
 // -- MASSIVE -- //
-massive(CONNECTION_STRING).then((database) => {
+massive(REACT_APP_CONNECTION_STRING).then(database => {
   app.set("db", database)
   console.log("database set!")
   console.log(database.listTables())
-  app.listen(SERVER_PORT, () => {
-    console.log(`listening on port ${SERVER_PORT}`)
+
+  app.listen(REACT_APP_SERVER_PORT, () => {
+    console.log(`listening on port ${REACT_APP_SERVER_PORT}`)
   })
+
 })
+// .catch(() => {
+//   console.log("Could not connect to database.")
+// })
+
+
 
 // -- ENDPOINTS -- //
 
